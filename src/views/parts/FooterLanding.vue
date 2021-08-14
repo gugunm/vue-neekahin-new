@@ -1,18 +1,33 @@
 <template>
-  <footer class="fixed w-full bottom-0 bg-color-footer py-6">
+  <footer class="w-full bottom-0 bg-color-footer py-6">
     <div class="mx-auto">
       <!-- <hr class="mb-6 border-b-1 border-gray-700" /> -->
-      <div class="w-full md:w-full px-4 text-center">
-        <div class="text-lg text-black font-semibold py-1">
-          <h1>Neekah</h1>
-          <p>Online Wedding Invitation</p>
+      <div class="w-full px-4 flex flex-col items-center">
+        <div class="">
+          <img
+            class="w-40"
+            :src="LogoFooter"
+            alt=""
+          >
         </div>
-        <div class="text-sm text-black font-semibold py-1">
-          <span class="px-3 inline-block py-1">Logo IG</span>
-          <span class="px-3 inline-block py-1">Logo FB</span>
-          <span class="px-3 inline-block py-1">Logo YT</span>
+        <div class="my-5 flex items-center justify-center">
+          <img
+            class="w-6 mx-3"
+            :src="IconIg"
+            alt=""
+          >
+          <img
+            class="w-6 mx-3"
+            :src="IconFb"
+            alt=""
+          >
+          <img
+            class="w-6 mx-3"
+            :src="IconYt"
+            alt=""
+          >
         </div>
-        <p class="text-sm text-black font-semibold py-1">
+        <p class="text-xs py-1">
           Copyright © {{date}} Neekah.in. All Right Reserved
         </p>
       </div>
@@ -20,9 +35,18 @@
   </footer>
 </template>
 <script>
+import LogoFooter from '../../assets/img/logo-footer.svg';
+import IconIg from '../../assets/img/icon-ig.svg';
+import IconFb from '../../assets/img/icon-fb.svg';
+import IconYt from '../../assets/img/icon-yt.svg';
+
 export default {
   data() {
     return {
+      LogoFooter,
+      IconIg,
+      IconFb,
+      IconYt,
       date: new Date().getFullYear(),
     };
   },

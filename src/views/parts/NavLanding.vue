@@ -4,7 +4,7 @@
     id="app"
   >
     <nav
-      class="flex items-center justify-between flex-wrap bg-transparent transition duration-500 ease-in-out w-screen p-6 pr-8 md:px-20"
+      class="flex items-center justify-between flex-wrap bg-transparent transition duration-500 ease-in-out w-screen py-4 sm:py-5 px-6 md:px-20"
       :class="{ 'onScroll': !view.topOfPage}"
     >
       <div class="flex items-center flex-no-shrink text-black mr-6">
@@ -22,16 +22,39 @@
       <div class="block sm:hidden">
         <button
           @click="toggle"
-          class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white"
+          class="flex items-center py-2 rounded text-teal-lighter border-teal-light hover:text-black hover:border-white"
         >
           <svg
+            viewBox="0 0 100 80"
+            width="40"
+            height="20"
+          >
+            <rect
+              width="100"
+              height="12"
+              rx="6"
+            ></rect>
+            <rect
+              y="30"
+              width="100"
+              height="12"
+              rx="6"
+            ></rect>
+            <rect
+              y="60"
+              width="100"
+              height="12"
+              rx="6"
+            ></rect>
+          </svg>
+          <!-- <svg
             class="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
+            viewBox="0 0 10 20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
+          </svg> -->
         </button>
       </div>
       <div
