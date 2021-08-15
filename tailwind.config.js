@@ -19,7 +19,7 @@ module.exports = {
       transitionProperty: {
         position: 'right, left, top, bottom, margin, padding'
       }
-    }
+    },
   },
   variants: {
     extend: {
