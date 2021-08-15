@@ -122,17 +122,25 @@
   <div class="flex flex-col items-center px-5">
     <h4 class="text-center mt-6">Harga</h4>
     <h2 class="text-center mt-2">Pricing</h2>
-    <Carousel
+    <carousel :itemsToShow="3.95" :wrapAround="true">
+    <slide v-for="slide in 10" :key="slide">{{ slide }}</slide>
+    <!-- <template #addons> -->
+      <navigation />
+    <!-- </template> -->
+  </carousel>
+
+
+    <!-- <carousel
       :itemsToShow="3.95"
       :wrapAround="true"
     >
-      <Slide
+      <slide
         v-for="slide in 10"
         :key="slide"
       >
         <div class="carousel__item">{{ slide }}</div>
-      </Slide>
-    </Carousel>
+      </slide>
+    </carousel> -->
   </div>
   <!-- <div class="bg-green-500">
     <div
@@ -161,14 +169,14 @@ import HomeHto2 from '../assets/img/home-hto-2.png';
 import HomeHto3 from '../assets/img/home-hto-3.png';
 import HomeHto4 from '../assets/img/home-hto-4.png';
 
-import { Carousel, Pagination, Slide } from 'vue3-carousel';
+import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
 import 'vue3-carousel/dist/carousel.css';
 
 export default {
-  components: { NavLanding, FooterLanding },
+  components: { NavLanding, FooterLanding, Carousel, Slide, Navigation },
   data() {
     return {
       HomeIcon,
@@ -184,6 +192,7 @@ export default {
       Carousel,
       Slide,
       Pagination,
+      Navigation,
       cssProps: {
         backgroundImage: 'url(' + CoverImg + ')',
       },
