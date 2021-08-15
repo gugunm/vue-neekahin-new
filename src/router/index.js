@@ -64,6 +64,15 @@ const routes = [
     path: '/landing',
     name: 'landing',
     component: () => import(/* webpackChunkName: "login" */ '../views/Landing')
+  },
+  {
+    meta: {
+      title: 'Order',
+      formScreen: true
+    },
+    path: '/order',
+    name: 'order',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Order')
   }
 ]
 
