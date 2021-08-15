@@ -261,9 +261,11 @@ p .admin-contact {
 	padding: 10px;
 }
 
+/* git pull */
 .carousel__prev,
 .carousel__next {
 	box-sizing: content-box;
 	border: 5px solid white;
 }
+
 </style>
