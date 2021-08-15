@@ -122,22 +122,22 @@
   <div class="flex flex-col items-center px-5">
     <h4 class="text-center mt-6">Harga</h4>
     <h2 class="text-center mt-2">Pricing</h2>
-    <carousel :itemsToShow="3.95" :wrapAround="true">
-    <slide v-for="slide in 10" :key="slide">{{ slide }}</slide>
-    <template #addons>
-      <navigation />
-    </template>
-  </carousel>
+
+    <carousel :itemsToShow="3.95" :wrapAround="true" :navigationEnabled="true">
+      <slide v-for="slide in 10" :key="slide">
+        <div class="carousel__item">{{ slide }}</div>
+      </slide>
+      <template #addons>
+        <navigation />
+      </template>
+    </carousel>
 
 
     <!-- <carousel
       :itemsToShow="3.95"
       :wrapAround="true"
     >
-      <slide
-        v-for="slide in 10"
-        :key="slide"
-      >
+      <slide v-for="slide in 10":key="slide">
         <div class="carousel__item">{{ slide }}</div>
       </slide>
     </carousel> -->
@@ -243,5 +243,27 @@ p .admin-contact {
 }
 .carousel__slide--active > .carousel__item {
   transform: scale(1.1);
+}
+
+.carousel__item {
+	min-height: 200px;
+	width: 100%;
+	background-color: #642afb;
+	color: white;
+	font-size: 20px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.carousel__slide {
+	padding: 10px;
+}
+
+.carousel__prev,
+.carousel__next {
+	box-sizing: content-box;
+	border: 5px solid white;
 }
 </style>
