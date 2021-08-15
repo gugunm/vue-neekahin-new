@@ -124,9 +124,9 @@
     <h2 class="text-center mt-2">Pricing</h2>
     <carousel :itemsToShow="3.95" :wrapAround="true">
     <slide v-for="slide in 10" :key="slide">{{ slide }}</slide>
-    <!-- <template #addons> -->
+    <template #addons>
       <navigation />
-    <!-- </template> -->
+    </template>
   </carousel>
 
 
