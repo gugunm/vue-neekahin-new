@@ -1,5 +1,5 @@
 <template>
-  <footer class="fixed w-full bottom-0 bg-color-footer py-6">
+  <footer class="w-full bottom-0 bg-color-footer py-6">
     <div class="mx-auto">
       <!-- <hr class="mb-6 border-b-1 border-gray-700" /> -->
       <div class="w-full md:w-full px-4 text-center">
