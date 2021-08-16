@@ -59,7 +59,7 @@
         </ul>
       </div>
       <img
-        data-aos="fade-left"
+        data-aos="fade-right"
         data-aos-duration="1500"
         class="mt-6 sm:flex-1"
         :src="HomeAbout"
