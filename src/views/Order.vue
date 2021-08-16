@@ -5,7 +5,7 @@
       <div class="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
         <section class="pt-4 pb-0 bg-order col-span-2 xl:px-16 xl:col-span-1  lg:col-span-1 md:px-8 xl:py-8 lg:py-8 md:py-8">
           <div class="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3">
-            <div class="col-span-3 flex flex-col items-center py-4 md:col-span-1">
+            <div class="col-span-3 flex flex-col items-center py-4 md:col-span-1 md:pt-20">
               <div class="grid grid-cols-3">
                 <div class="pb-4 xl:col-span-3 lg:col-span-3 md:col-span-3">
                   <svg width="78" height="56" viewBox="0 0 78 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,8 +14,8 @@
                 </div>
 
                 <div class="pb-4 flex flex-col items-left text-white xl:col-span-3 xl:items-center lg:items-center lg:xl:col-span-3 md:items-center md:col-span-3 xs:text-left">
-                  <p>Silver</p>
-                  <span>IDR 250.000</span>
+                  <p class="font-medium">Silver</p>
+                  <span class="font-vollkorn text-xl">IDR 250.000</span>
                 </div>
               </div>
             </div>
@@ -38,7 +38,6 @@
               </div>
             </div>
           </div>
-
 
         </section>
 
@@ -112,7 +111,7 @@ export default {
   .button-color{
     background-color: #B58200;
     color:#ffffff;
-    text-size:12px;
+    text-size: 12px;
     border-radius: 5px;
   }
   .border-color-2{

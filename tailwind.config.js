@@ -5,7 +5,6 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-
     borderWidth: {
       DEFAULT: '1px',
       '0': '0',

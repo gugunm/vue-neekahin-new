@@ -1,1 +1,51 @@
 @tailwind utilities;
+
+.text-gold {
+  color: #b58200;
+}
+
+.text-dark-gold {
+  color: #8a5d1a;
+}
+
+.text-grey {
+  color: #828282;
+}
+
+.bg-dark-gold {
+  background-color: #8a5d1a;
+}
+
+.bg-neekah-1 {
+  background-color: #f8f7f4;
+}
+
+.bg-neekah-2 {
+  background-color: #f8f7f4;
+}
+
+.bg-position-mobile {
+  background-position: 84% 0px;
+}
+
+.bg-position-desktop {
+  background-position: center;
+}
+
+.border-gold {
+  border-color:#b58200;
+}
+
+@layer utilities {
+  @variants hover {
+    .text-gold {
+      color: #b58200;
+    }
+    .border-gold {
+      border-color:#b58200;
+    }
+    .bg-gold {
+      background-color: #b58200;
+    }
+  }
+}
