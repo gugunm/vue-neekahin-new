@@ -15,7 +15,7 @@
         alt=""
       >
       <h1
-        data-aos="fade-left"
+        data-aos="zoom-in"
         data-aos-duration="1500"
         class="px-10 text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4"
       >Undangan Untuk Momen Terbaik Anda</h1>
@@ -59,7 +59,7 @@
         </ul>
       </div>
       <img
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-duration="1500"
         class="mt-6 sm:flex-1"
         :src="HomeAbout"
@@ -112,19 +112,24 @@
       alt=""
     > -->
   </div>
-  <Carousel>
-    <Slide
-      v-for="slide in 10"
-      :key="slide"
-    >
-      <div class="carousel__item h-40 mx-20">{{ slide }}</div>
-    </Slide>
+  <div class="bg-neekah-1 py-10">
+    <Carousel class="sm:hidden">
+      <Slide
+        v-for="slide in 10"
+        :key="slide"
+      >
+        <div class="carousel__item h-40 mx-6"> <img
+            class=""
+            :src="HomeGaleri1"
+            alt=""
+          ></div>
+      </Slide>
 
-    <template #addons>
-      <Navigation class="mx-14" />
-      <Pagination />
-    </template>
-  </Carousel>
+      <template #addons>
+        <Navigation class="mx-14" />
+      </template>
+    </Carousel>
+  </div>
   <!-- HOW TO ORDER -->
   <div class="flex flex-col items-center px-5 sm:px-20">
     <div
@@ -267,7 +272,8 @@ import HomeHto2 from '../assets/img/home-hto-2.png';
 import HomeHto3 from '../assets/img/home-hto-3.png';
 import HomeHto4 from '../assets/img/home-hto-4.png';
 
-import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
+// import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
+import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 
 import AOS from 'aos';
@@ -279,7 +285,7 @@ export default {
     FooterLanding,
     Carousel,
     Slide,
-    Pagination,
+    // Pagination,
     Navigation,
   },
   data() {
@@ -387,7 +393,6 @@ p .admin-contact {
   background-color: var(--carousel-color-primary);
   color: var(--carousel-color-white);
   font-size: 20px;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,4 +408,3 @@ p .admin-contact {
   border: 5px solid white;
 }
 </style>
-
