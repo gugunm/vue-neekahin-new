@@ -125,11 +125,6 @@
       <Pagination />
     </template>
   </Carousel>
-  <!-- <img
-            class="mt-10 mb-8 px-5"
-            :src="HomeGaleri1"
-            alt=""
-          > -->
   <!-- HOW TO ORDER -->
   <div class="flex flex-col items-center px-5 sm:px-20">
     <div
