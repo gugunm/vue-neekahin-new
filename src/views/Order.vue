@@ -1,6 +1,6 @@
 <template>
   <nav-landing />
-  <div class="bg-green pt-28 pb-16">
+  <div class="bg-white pt-28 pb-16">
     <div class="py-4 sm:py-5 px-6 xl:px-20">
       <div class="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
         <section class="pt-4 pb-0 bg-order col-span-2 xl:px-16 xl:col-span-1  lg:col-span-1 md:px-8 xl:py-8 lg:py-8 md:py-8">
