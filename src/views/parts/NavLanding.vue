@@ -63,7 +63,7 @@
         class="w-full flex-grow sm:flex sm:items-center sm:w-auto md:text-center sm:text-left"
       >
         <div
-          :class="view.topOfPage && $route.name === 'landing'? 'text-white' : 'text-black'"
+          :class="view.topOfPage && open === false && $route.name === 'landing'? 'text-white' : 'text-black text-center'"
           class="text-sm sm:flex-grow"
         >
           <a
@@ -91,11 +91,13 @@
             HARGA
           </a>
         </div>
-        <div>
+        <div :class="{
+          'text-center' : open
+          }">
           <a
             href="#"
-            class="no-underline inline-block text-sm px-8 py-3 leading-none border hover:border-transparent hover:bg-white mt-4 sm:mt-0"
-            :class="view.topOfPage && $route.name === 'landing'? 'text-white border-white hover:text-black' : 'text-gold border-gold'"
+            class="no-underline inline-block text-sm px-8 py-2 sm:py-3 leading-none border hover:border-transparent hover:bg-white mt-4 sm:mt-0"
+            :class="view.topOfPage && open === false && $route.name === 'landing'? 'text-white border-white hover:text-gold' : 'text-gold border-gold hover:bg-gold hover:text-white'"
           >Pesan Sekarang</a>
         </div>
       </div>

@@ -41,5 +41,11 @@
     .text-gold {
       color: #b58200;
     }
+    .border-gold {
+      border-color:#b58200;
+    }
+    .bg-gold {
+      background-color: #b58200;
+    }
   }
 }

@@ -27,7 +27,7 @@
       <button
         data-aos="flip-right "
         data-aos-duration="1500"
-        class="bg-transparent text-sm hover:bg-white text-white hover:text-gold hover:border-none py-2 px-10 border border-white mt-14"
+        class="bg-transparent text-sm hover:bg-white text-white hover:text-gold hover:border-none py-2 sm:py-3 px-10 border border-white mt-14"
       >
         Pesan Undangan
       </button>
@@ -112,27 +112,16 @@
       alt=""
     > -->
   </div>
-  <Carousel class="bg-neekah-1 py-10 px-6 sm:px-16">
+  <Carousel>
     <Slide
-      v-for="slide in 3"
+      v-for="slide in 10"
       :key="slide"
     >
-      <div class="carousel__item">
-        <div
-          class="galeri-img bg-cover bg-center h-36 sm:h-96 w-full"
-          :style="cssProps"
-        >
-          <!-- <img
-          class="h-96"
-          :src="HomeGaleri1"
-          alt=""
-        > -->
-        </div>
-      </div>
+      <div class="carousel__item h-40 mx-20">{{ slide }}</div>
     </Slide>
 
     <template #addons>
-      <Navigation />
+      <Navigation class="mx-14" />
       <Pagination />
     </template>
   </Carousel>
@@ -236,7 +225,7 @@
     <h4 class="text-center mt-12 text-sm text-grey sm:text-base">Harga</h4>
     <h2 class="text-center text-4xl text-gold font-dancing sm:text-6xl sm:mt-5">Pricing</h2>
   </div>
-  <carousel
+  <!-- <carousel
     class="my-10"
     :itemsToShow="3.95"
     :wrapAround="true"
@@ -252,10 +241,10 @@
         </div>
       </div>
     </slide>
-    <!-- <template #addons>
-        <navigation />
-      </template> -->
-  </carousel>
+    <template #addons>
+      <navigation />
+    </template>
+  </carousel> -->
   <!-- <div class="bg-green-500">
     <div
       class="displayBox"
@@ -295,6 +284,8 @@ export default {
     FooterLanding,
     Carousel,
     Slide,
+    Pagination,
+    Navigation,
   },
   data() {
     return {
@@ -308,10 +299,10 @@ export default {
       HomeHto2,
       HomeHto3,
       HomeHto4,
-      Carousel,
-      Slide,
-      Pagination,
-      Navigation,
+      // Carousel,
+      // Slide,
+      // Pagination,
+      // Navigation,
       cssProps: {
         backgroundImage: 'url(' + CoverImg + ')',
       },
