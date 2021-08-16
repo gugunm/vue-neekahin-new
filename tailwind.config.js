@@ -56,6 +56,7 @@ module.exports = {
         '12': '3rem',
        }
     },
+
   },
   variants: {
     extend: {
