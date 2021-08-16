@@ -5,29 +5,29 @@
       <div class="w-full px-4 flex flex-col items-center">
         <div class="">
           <img
-            class="w-40"
+            class="w-40 sm:w-48"
             :src="LogoFooter"
             alt=""
           >
         </div>
-        <div class="my-5 flex items-center justify-center">
+        <div class="my-5 sm:my-6 flex items-center justify-center">
           <img
-            class="w-6 mx-3"
+            class="w-6 mx-3 sm:mx-4"
             :src="IconIg"
             alt=""
           >
           <img
-            class="w-6 mx-3"
+            class="w-6 mx-3 sm:mx-4"
             :src="IconFb"
             alt=""
           >
           <img
-            class="w-6 mx-3"
+            class="w-6 mx-3 sm:mx-4"
             :src="IconYt"
             alt=""
           >
         </div>
-        <p class="text-xs py-1">
+        <p class="text-xs sm:text-sm font-semibold py-1">
           Copyright © {{date}} Neekah.in. All Right Reserved
         </p>
       </div>

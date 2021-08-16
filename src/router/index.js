@@ -8,7 +8,7 @@ const routes = [
     meta: {
       title: 'Dashboard'
     },
-    path: '/',
+    path: '/dashboard',
     name: 'home',
     component: Home
   },
@@ -61,7 +61,7 @@ const routes = [
       title: 'Landing',
       formScreen: true
     },
-    path: '/landing',
+    path: '/',
     name: 'landing',
     component: () => import(/* webpackChunkName: "login" */ '../views/Landing')
   },
