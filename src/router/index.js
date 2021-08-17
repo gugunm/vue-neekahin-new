@@ -76,7 +76,7 @@ const routes = [
   },
   {
     meta: {
-      title: 'Order',
+      title: 'Order Success',
       formScreen: true
     },
     path: '/order-success',
