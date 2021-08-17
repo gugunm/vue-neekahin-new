@@ -114,6 +114,11 @@ export default {
     text-size: 12px;
     border-radius: 5px;
   }
+  .button-color:hover{
+    background:transparent;
+    border:solid 1px #B58200;
+    color:#B58200;
+  }
   .border-color-2{
     border: #C4C4C4 1px solid;
     border-radius: 5px;
