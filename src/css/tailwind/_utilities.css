@@ -12,6 +12,14 @@
   color: #828282;
 }
 
+.text-black-1 {
+  color: #373131;
+}
+
+.text-brown {
+  color: #4D4D4D;
+}
+
 .bg-dark-gold {
   background-color: #8a5d1a;
 }
@@ -44,8 +52,14 @@
     .border-gold {
       border-color:#b58200;
     }
+    .border-dark-gold {
+      border-color:#8a5d1a;
+    }
     .bg-gold {
       background-color: #b58200;
+    }
+    .bg-dark-gold {
+      background-color: #8a5d1a;
     }
   }
 }

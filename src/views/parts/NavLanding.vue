@@ -4,7 +4,7 @@
     id="app"
   >
     <nav
-      class="flex items-center justify-between flex-wrap bg-transparent transition duration-500 ease-in-out w-screen py-4 sm:py-5 px-6 md:px-20"
+      class="flex items-center justify-between flex-wrap bg-transparent transition duration-500 ease-in-out w-screen py-4 md:py-10 lg:py-5 px-6 md:px-20 lg:px-20"
       :class="{ 
         'onScroll': !view.topOfPage, 
         'onMenuOpen' : open, 
@@ -13,12 +13,12 @@
     >
       <div class="flex items-center flex-no-shrink text-black mr-6">
         <img
-          class="h-11 sm:h-14"
+          class="h-11 md:h-14 lg:h-14"
           :src="view.topOfPage && open === false && $route.name === 'landing' ? LogoNav : LogoNavGold"
           alt=""
         >
       </div>
-      <div class="block sm:hidden">
+      <div class="block lg:hidden">
         <button
           @click="toggle"
           class="flex items-center py-2 rounded text-white hover:text-black hover:border-white"
@@ -60,33 +60,33 @@
       </div>
       <div
         :class="open ? 'block': 'hidden'"
-        class="w-full flex-grow sm:flex sm:items-center sm:w-auto md:text-center sm:text-left"
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:text-center lg:text-left"
       >
         <div
           :class="view.topOfPage && open === false && $route.name === 'landing'? 'text-white' : 'text-black text-center'"
-          class="text-sm sm:flex-grow"
+          class="text-sm lg:flex-grow"
         >
           <a
             href="#responsive-header"
-            class="btn-nav no-underline block mt-4 sm:inline-block sm:mt-0 md:mx-8"
+            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
           >
             BERANDA
           </a>
           <a
             href="#responsive-header"
-            class="btn-nav no-underline block mt-4 sm:inline-block sm:mt-0 md:mx-8"
+            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
           >
             GALLERY
           </a>
           <a
             href="#responsive-header"
-            class="btn-nav no-underline block mt-4 sm:inline-block sm:mt-0 md:mx-8"
+            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
           >
             CARA PESAN
           </a>
           <a
             href="#responsive-header"
-            class="btn-nav no-underline block mt-4 sm:inline-block sm:mt-0 md:mx-8"
+            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
           >
             HARGA
           </a>
@@ -96,7 +96,7 @@
           }">
           <a
             href="#"
-            class="no-underline inline-block text-sm px-8 py-2 sm:py-3 leading-none border hover:border-transparent hover:bg-white mt-4 sm:mt-0"
+            class="no-underline inline-block text-sm px-8 py-2 lg:py-3 leading-none border hover:border-transparent hover:bg-white mt-4 lg:mt-0"
             :class="view.topOfPage && open === false && $route.name === 'landing'? 'text-white border-white hover:text-gold' : 'text-gold border-gold hover:bg-gold hover:text-white'"
           >Pesan Sekarang</a>
         </div>

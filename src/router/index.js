@@ -82,6 +82,15 @@ const routes = [
     path: '/order-success',
     name: 'order-seccess',
     component: () => import(/* webpackChunkName: "login" */ '../views/OrderSuccess')
+  },
+  {
+    meta: {
+      title: 'Carousel',
+      formScreen: true
+    },
+    path: '/slick',
+    name: 'slick',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Carousel.vue')
   }
 ]
 

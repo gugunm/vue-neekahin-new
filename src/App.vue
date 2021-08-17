@@ -40,7 +40,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -50,7 +50,7 @@ export default {
   font-family: 'Dancing Script', cursive;
 }
 
-.font-vollkorn{
+.font-vollkorn {
   font-family: 'Vollkorn', serif !important;
 }
 </style>
