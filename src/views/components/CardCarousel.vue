@@ -29,7 +29,10 @@
                 <li>Link / URL Domain</li>
               </ul>
             </div>
-            <button class="btn-price text-xs lg:text-sm w-full mt-2 mb-4 py-3 lg:py-3 px-8 rounded bg-transparent text-gold tracking-widest hover:bg-dark-gold hover:text-white transition duration-200">Pesan Sekarang</button>
+            <button
+              @click="onPesanSilver"
+              class="btn-price text-xs lg:text-sm w-full mt-2 mb-4 py-3 lg:py-3 px-8 rounded bg-transparent text-gold tracking-widest hover:bg-dark-gold hover:text-white transition duration-200"
+            >Pesan Sekarang</button>
           </div>
         </div>
       </div>
@@ -56,7 +59,10 @@
                 <li>UCapan dari tamu</li>
               </ul>
             </div>
-            <button class="w-full text-xs lg:text-sm mt-2 mb-4 py-3 lg:py-3 px-8 rounded bg-transparent bg-gold text-white tracking-widest hover:bg-dark-gold transition duration-200">Pesan Sekarang</button>
+            <button
+              @click="onPesanGold"
+              class="w-full text-xs lg:text-sm mt-2 mb-4 py-3 lg:py-3 px-8 rounded bg-transparent bg-gold text-white tracking-widest hover:bg-dark-gold transition duration-200"
+            >Pesan Sekarang</button>
           </div>
         </div>
       </div>
@@ -83,7 +89,10 @@
                 <li>2 lokasi acara</li>
               </ul>
             </div>
-            <button class="w-full text-xs lg:text-sm mt-2 mb-4 py-3 lg:py-3 px-8 rounded bg-transparent bg-gold text-white tracking-widest hover:bg-dark-gold transition duration-200">Pesan Sekarang</button>
+            <button
+              @click="onPesanPlatinum"
+              class="w-full text-xs lg:text-sm mt-2 mb-4 py-3 lg:py-3 px-8 rounded bg-transparent bg-gold text-white tracking-widest hover:bg-dark-gold transition duration-200"
+            >Pesan Sekarang</button>
           </div>
         </div>
       </div>
@@ -127,6 +136,17 @@ export default {
   },
   mounted() {
     AOS.init();
+  },
+  methods: {
+    onPesanSilver() {
+      this.$router.push({ path: 'order', query: { paket: 'silver' } });
+    },
+    onPesanGold() {
+      this.$router.push({ path: 'order', query: { paket: 'gold' } });
+    },
+    onPesanPlatinum() {
+      this.$router.push({ path: 'order', query: { paket: 'platinum' } });
+    },
   },
 };
 </script>

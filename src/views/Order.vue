@@ -3,10 +3,10 @@
   <div class="bg-white pt-28 pb-16">
     <div class="py-4 sm:py-5 px-6 xl:max-w-screen-xl mx-auto">
       <div class="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
-        <section class="pt-4 pb-0 bg-order col-span-2 xl:px-16 xl:col-span-1  lg:col-span-1 md:px-8 xl:py-8 lg:py-8 md:py-8">
+        <section class="pt-4 pb-0 bg-order col-span-2 xl:px-12 xl:col-span-1  lg:col-span-1 md:px-8 xl:py-8 lg:py-8 md:py-8">
           <div class="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3">
             <div class="col-span-3 flex flex-col items-center py-4 md:col-span-1 md:pt-10">
-              <div class="grid grid-cols-3">
+              <div class="w-full grid grid-cols-3">
                 <div class="mx-auto pb-4 xl:col-span-3 lg:col-span-3 md:col-span-3">
                   <svg
                     width="78"
@@ -21,35 +21,32 @@
                     />
                   </svg>
                 </div>
-
-                <div class="pb-4 flex flex-col items-left text-white xl:col-span-3 xl:items-center lg:items-center lg:xl:col-span-3 md:items-center md:col-span-3 xs:text-left">
-                  <p class="font-medium">Silver</p>
-                  <span class="font-vollkorn text-xl">IDR 250.000</span>
+                <div class="pb-4 flex flex-col items-left text-white xl:col-span-3 xl:items-center lg:items-center lg:col-span-3 md:items-center md:col-span-3 xs:text-left">
+                  <p class="font-medium capitalize">{{ selectedPaket }}</p>
+                  <span class="font-vollkorn text-xl">IDR {{ selectedItem.hargaDisc || selectedItem.hargaNormal  }}</span>
                 </div>
               </div>
             </div>
             <div class="uppercase  p-8 lg:py-8 border-dashed hidden rounded-2xl box-content border-white text-white xl:col-span-3 xl:border-2 xl:block lg:border-2 md:col-span-2 md:border-2 md:block">
               <div class="grid grid-cols-2">
                 <div class="col-span-2 xl:col-span-2 lg:col-span-2 md:col-span-1">
-                  <ul class="list-dist-inside leading-12 lg:text-left">
-                    <li><span>&#9679; </span>Simple design</li>
-                    <li><span>&#9679; </span>Max 5 foto/galeri</li>
-                    <li><span>&#9679; </span>Maps</li>
+                  <ul class="list-dist-inside leading-12 text-left">
+                    <li><span>&#9679; </span>{{ selectedItem.items[0] }}</li>
+                    <li><span>&#9679; </span>{{ selectedItem.items[1] }}</li>
+                    <li><span>&#9679; </span>{{ selectedItem.items[2] }}</li>
                   </ul>
                 </div>
                 <div class="col-span-2 xl:col-span-2 lg:col-span-2 md:col-span-1">
                   <ul class="list-dist-inside leading-12 lg:text-left">
-                    <li><span>&#9679; </span>Countdown</li>
-                    <li><span>&#9679; </span>Music</li>
-                    <li><span>&#9679; </span>Link / Url Domain</li>
+                    <li><span>&#9679; </span>{{ selectedItem.items[3] }}</li>
+                    <li><span>&#9679; </span>{{ selectedItem.items[4] }}</li>
+                    <li><span>&#9679; </span>{{ selectedItem.items[5] }}</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-
         </section>
-
         <section class="col-span-2 pt-12 pb-8 xl:col-span-2 px-4 border-color capitalize">
           <p class="pb-4 px-4 text-xl">lengkapi data diri</p>
           <div class=" capitalize">
@@ -103,14 +100,12 @@
                   placeholder="*Saya inging yang simple dan modern"
                 ></textarea>
               </div>
-
               <div class="px-4 col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-1">
                 <button
                   type="submit"
                   class="button-color rounded text-xs md:text-sm w-full xl:w-8/12 px-8 py-3 capitalize"
                 >pesan undangan</button>
               </div>
-
             </form>
           </div>
         </section>
@@ -124,15 +119,63 @@
 import FooterLanding from './parts/FooterLanding.vue';
 import NavLanding from './parts/NavLanding.vue';
 import silverPng from '@/assets/img/vector-silver.png';
+
+const paket = {
+  silver: {
+    hargaNormal: '250.000',
+    hargaDisc: '',
+    items: [
+      'SIMPLE DESIGN',
+      'MAX 5 FOTO/GALERI',
+      'MAPS',
+      'COUNTDOWN',
+      'MUSIC',
+      'LINK / URL DOMAIN',
+    ],
+  },
+  gold: {
+    hargaNormal: '350.000',
+    hargaDisc: '300.000',
+    items: [
+      'SILVER FEATURES INCLUDED',
+      'ELEGANCE DESIGN',
+      'MAX 8 FOTO/GALERI',
+      'COUNTDOWN',
+      'VIDEO',
+      'UCAPAN DARI TAMU',
+    ],
+  },
+  platinum: {
+    hargaNormal: '500.000',
+    hargaDisc: '450.000',
+    items: [
+      'GOLD FEATURES INCLUDED',
+      'PREMIUM DESIGN',
+      'MAX 12 FOTO/GALERI',
+      'WEDDING GIFT',
+      'REVISI MINOR & MAJOR',
+      '2 LOKASI ACARA',
+    ],
+  },
+};
+
 export default {
   components: { NavLanding, FooterLanding },
   data() {
     return {
       silverPng,
+      selectedPaket: this.$route.query.paket,
+      paket,
     };
+  },
+  computed: {
+    selectedItem() {
+      return this.paket[this.selectedPaket];
+    },
   },
 };
 </script>
+
 <style scoped>
 .card-order {
   background-color: hsla(0, 0%, 100%, 0.75);
