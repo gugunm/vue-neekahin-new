@@ -5,6 +5,7 @@
         <div
           data-aos="flip-left"
           data-aos-duration="1500"
+          :data-aos-once="true"
           class="w-full h-20 md:h-52 md:w-1/3 mb-2 md:mb-4 px-2"
         >
           <div
@@ -16,6 +17,7 @@
         <div
           data-aos="flip-right"
           data-aos-duration="1500"
+          :data-aos-once="true"
           class="w-full h-20 md:h-52 md:w-1/3 mb-2 md:mb-4 px-2"
         >
           <div
@@ -27,6 +29,7 @@
         <div
           data-aos="flip-left"
           data-aos-duration="1500"
+          :data-aos-once="true"
           class="w-full h-20 md:h-52 md:w-1/3 md:mb-4 px-2"
         >
           <div
@@ -39,6 +42,7 @@
       <div
         data-aos="flip-left"
         data-aos-duration="1500"
+        :data-aos-once="true"
         class="w-full md:w-1/2 h-64 md:h-64 px-2 sm:w-2/3"
       >
         <div
@@ -50,6 +54,7 @@
       <div
         data-aos="flip-right"
         data-aos-duration="1500"
+        :data-aos-once="true"
         class="w-full md:w-1/2 h-32 md:h-64 px-2 sm:hidden md:block"
       >
         <div

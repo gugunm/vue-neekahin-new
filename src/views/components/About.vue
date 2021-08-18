@@ -3,6 +3,7 @@
     <div
       data-aos="fade-up"
       data-aos-duration="1500"
+      :data-aos-once="true"
     >
       <h4 class="text-center mt-12 text-sm md:text-base text-grey">Siapa Neekah.in</h4>
       <h2 class="font-dancing text-center text-4xl md:text-6xl text-gold mt-3 md:mt-5">Who We Are?</h2>
@@ -13,6 +14,7 @@
         data-aos="fade-right"
         data-aos-duration="1500"
         class="md:flex-1"
+        :data-aos-once="true"
       >
         <p class="text-sm md:text-base md:leading-8 leading-6 text-justify md:text-left mt-10">Kami membantu anda dalam membagikan momen terbaik untuk anda dan orang orang terdekat anda. Neekah.in bertekad untuk selalu memberikan pelayanan terbaik dalam pembuatan undangan digital berbasis web.</p>
         <p class="text-sm md:text-base md:leading-8 leading-6 text-justify mt-2 md:mt-4">Beberapa keuntungan yang anda dapatkan :</p>
@@ -26,6 +28,7 @@
       <img
         data-aos="zoom-in"
         data-aos-duration="1500"
+        :data-aos-once="true"
         class="mt-6 md:flex-1"
         :src="HomeAbout"
         alt=""
@@ -34,6 +37,7 @@
     <div
       data-aos="zoom-in"
       data-aos-duration="1500"
+      :data-aos-once="true"
       class="text-dark-gold italic flex items-center justify-evenly text-center mt-5 mb-7 md:mt-14 md:my-20 md:px-36"
     >
       <div class="flex flex-col items-center mx-2">

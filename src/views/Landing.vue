@@ -1,10 +1,14 @@
 <template>
   <nav-landing />
   <div>
+    <div id="beranda"></div>
     <welcome />
     <about />
+    <div id="gellery"></div>
     <gallery />
+    <div id="order"></div>
     <how-to-order />
+    <div id="price"></div>
     <pricing />
   </div>
   <footer-landing />

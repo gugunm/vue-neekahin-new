@@ -8,15 +8,17 @@
       :class="{ 
         'onScroll': !view.topOfPage, 
         'onMenuOpen' : open, 
-        'bg-white' : $route.name !== 'landing'
+        'bg-white' : $route.name !== 'home'
       }"
     >
       <div class="flex items-center flex-no-shrink text-black mr-6">
-        <img
-          class="h-11 md:h-14 lg:h-14"
-          :src="view.topOfPage && open === false && $route.name === 'landing' ? LogoNav : LogoNavGold"
-          alt=""
-        >
+        <a href="/">
+          <img
+            class="h-11 md:h-14 lg:h-14"
+            :src="view.topOfPage && open === false && $route.name === 'home' ? LogoNav : LogoNavGold"
+            alt=""
+          >
+        </a>
       </div>
       <div class="block lg:hidden">
         <button
@@ -25,7 +27,7 @@
         >
           <svg
             class="fill-current"
-            :class="view.topOfPage && open === false && $route.name === 'landing' ? 'text-white' : 'text-gold'"
+            :class="view.topOfPage && open === false && $route.name === 'home' ? 'text-white' : 'text-gold'"
             viewBox="0 0 100 80"
             width="40"
             height="20"
@@ -60,45 +62,49 @@
       </div>
       <div
         :class="open ? 'block': 'hidden'"
-        class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:text-center lg:text-left"
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:text-center"
       >
         <div
-          :class="view.topOfPage && open === false && $route.name === 'landing'? 'text-white' : 'text-black text-center'"
+          :class="view.topOfPage && open === false && $route.name === 'home'? 'text-white' : 'text-black text-center'"
           class="text-sm lg:flex-grow"
         >
-          <a
-            href="#responsive-header"
-            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
+          <button
+            v-scroll-to="{ element: '#beranda', duration: 1500 }"
+            :class="view.topOfPage && open === false && $route.name === 'home'? 'hover:garis-gold' : 'hover:garis-peach'"
+            class="tracking-wide btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8 transform transition duration-500"
           >
             BERANDA
-          </a>
-          <a
-            href="#responsive-header"
-            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
+          </button>
+          <button
+            v-scroll-to="{ element: '#gellery', duration: 1500, offset: -100}"
+            :class="view.topOfPage && open === false && $route.name === 'home'? 'hover:garis-gold' : 'hover:garis-peach'"
+            class="tracking-wide btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8 transform transition duration-500"
           >
             GALLERY
-          </a>
-          <a
-            href="#responsive-header"
-            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
+          </button>
+          <button
+            v-scroll-to="{ element: '#order', duration: 1500, offset: -100 }"
+            :class="view.topOfPage && open === false && $route.name === 'home'? 'hover:garis-gold' : 'hover:garis-peach'"
+            class="tracking-wide btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8 transform transition duration-500"
           >
             CARA PESAN
-          </a>
-          <a
-            href="#responsive-header"
-            class="btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8"
+          </button>
+          <button
+            v-scroll-to="{ element: '#price', duration: 1500, offset: -100 }"
+            :class="view.topOfPage && open === false && $route.name === 'home'? 'hover:garis-gold' : 'hover:garis-peach'"
+            class="tracking-wide btn-nav no-underline block mt-4 lg:inline-block lg:mt-0 lg:mx-8 transform transition duration-500"
           >
             HARGA
-          </a>
+          </button>
         </div>
         <div :class="{
           'text-center' : open
           }">
-          <a
-            href="#"
+          <button
+            v-scroll-to="{ element: '#price', duration: 1500, offset: -100 }"
             class="no-underline inline-block text-sm px-8 py-2 lg:py-3 leading-none border hover:border-transparent hover:bg-white mt-4 lg:mt-0"
-            :class="view.topOfPage && open === false && $route.name === 'landing'? 'text-white border-white hover:text-gold' : 'text-gold border-gold hover:bg-gold hover:text-white'"
-          >Pesan Sekarang</a>
+            :class="view.topOfPage && open === false && $route.name === 'home'? 'text-white border-white hover:text-gold' : 'text-gold border-gold hover:bg-gold hover:text-white'"
+          >Pesan Sekarang</button>
         </div>
       </div>
     </nav>
@@ -110,6 +116,7 @@ import LogoNav from '../../assets/img/logo-nav.svg';
 import LogoNavGold from '../../assets/img/logo-nav-gold.svg';
 
 export default {
+  components: {},
   data() {
     return {
       LogoNav,

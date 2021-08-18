@@ -3,6 +3,7 @@
     <div
       data-aos="fade-up"
       data-aos-duration="1500"
+      :data-aos-once="true"
     >
       <h4 class="text-center mt-12 text-sm sm:text-base text-grey">Galeri Kami</h4>
       <h2 class="text-center mt-2 text-4xl text-gold sm:text-6xl sm:mt-5 font-dancing">Featured Story</h2>
@@ -16,6 +17,7 @@
       class="sm:hidden"
       data-aos="zoom-in"
       data-aos-duration="1500"
+      :data-aos-once="true"
     >
       <slick-carousel />
     </div>

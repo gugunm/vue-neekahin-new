@@ -2,6 +2,7 @@
   <div
     data-aos="fade-down"
     data-aos-duration="1500"
+    :data-aos-once="true"
     class="flex flex-col items-center px-5"
   >
     <h4 class="text-center mt-12 text-sm text-grey sm:text-base">Harga</h4>

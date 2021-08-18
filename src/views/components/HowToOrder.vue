@@ -4,6 +4,7 @@
       <div
         data-aos="fade-up"
         data-aos-duration="1500"
+        :data-aos-once="true"
       >
         <h4 class="text-center mt-12 text-sm sm:text-base text-grey">Cara Pemesanan</h4>
         <h2 class="text-center mt-2 text-4xl text-gold font-dancing sm:text-6xl sm:mt-5">How to Order</h2>
@@ -13,6 +14,7 @@
           <div
             data-aos="flip-left"
             data-aos-duration="1500"
+            :data-aos-once="true"
             class="flex sm:flex-1 items-center justify-between mt-10 sm:flex-col sm:text-center sm:mt-0"
           >
             <img
@@ -28,6 +30,7 @@
           <div
             data-aos="flip-left"
             data-aos-duration="1500"
+            :data-aos-once="true"
             class="flex sm:flex-1 items-center justify-between mt-10 sm:flex-col sm:text-center sm:mt-0"
           >
             <img
@@ -43,6 +46,7 @@
           <div
             data-aos="flip-left"
             data-aos-duration="1500"
+            :data-aos-once="true"
             class="flex sm:flex-1 items-center justify-between mt-10 sm:flex-col sm:text-center sm:mt-0"
           >
             <img
@@ -58,6 +62,7 @@
           <div
             data-aos="flip-left"
             data-aos-duration="1500"
+            :data-aos-once="true"
             class="flex sm:flex-1 items-center justify-between mt-10 sm:flex-col sm:text-center sm:mt-0"
           >
             <img
@@ -68,6 +73,7 @@
             <div
               data-aos="flip-left"
               data-aos-duration="1500"
+              :data-aos-once="true"
               class="w-auto px-5 sm:pt-6 sm:pb-3"
             >
               <div class="rounded-full h-6 w-6 flex items-center justify-center bg-dark-gold text-white text-xs">4</div>
@@ -78,10 +84,12 @@
         <p
           data-aos="fade-up"
           data-aos-duration="1500"
+          :data-aos-once="true"
           class="hto-bottom text-xs sm:text-sm mt-10 text-justify sm:px-10 sm:mt-14"
         >*Jika masih kebingungan dengan proses ini bisa hubungi tim Neekah.in melalui <a
             class="admin-contact"
-            href=""
+            target="_blank"
+            href="https://wa.link/s2bt2q"
           >Admin Support kami.</a></p>
       </div>
     </div>
@@ -121,11 +129,6 @@ export default {
 .hto-bottom {
   line-height: 24px;
   letter-spacing: 0.02em;
-}
-p .admin-contact {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #b58200;
 }
 
 /* CIRCLE */

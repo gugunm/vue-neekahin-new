@@ -1,13 +1,14 @@
 <template>
   <div class="block lg:block mb-24 mt-4">
     <!-- Box -->
-    <div class="md:flex md:justify-center md:space-x-8 lg:space-x-12 md:px-14 xl:max-w-screen-xl mx-auto">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1500"
+      :data-aos-once="true"
+      class="md:flex md:justify-center md:space-x-8 lg:space-x-12 md:px-14 xl:max-w-screen-xl mx-auto"
+    >
       <!-- box-1 -->
-      <div
-        data-aos="flip-right"
-        data-aos-duration="1500"
-        class="mt-16 py-8 px-8 lg:px-0 w-72 lg:w-1/3 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0"
-      >
+      <div class="mt-16 py-8 px-8 lg:px-0 w-72 lg:w-1/3 bg-neekah-1 hover:shadow-lg transform hover:scale-105 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm">
           <img
             class="w-20 mx-auto"
@@ -34,11 +35,7 @@
       </div>
 
       <!-- box-2 -->
-      <div
-        data-aos="flip-right"
-        data-aos-duration="1500"
-        class="mt-16 py-8 px-8 lg:px-0 bg-whit w-72 lg:w-1/3 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0"
-      >
+      <div class="mt-16 py-8 px-8 lg:px-0 bg-whit w-72 lg:w-1/3 bg-peach hover:shadow-lg transform hover:scale-105 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm">
           <img
             class="w-20 mx-auto"
@@ -65,11 +62,7 @@
       </div>
 
       <!-- box-3 -->
-      <div
-        data-aos="flip-left"
-        data-aos-duration="1500"
-        class="mt-16 py-8 px-8 lg:px-0 bg-whit w-72 lg:w-1/3 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0"
-      >
+      <div class="mt-16 py-8 px-8 lg:px-0 bg-whit w-72 lg:w-1/3 bg-dark-peach hover:shadow-lg transform hover:scale-105 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm">
           <img
             class="w-20 mx-auto"

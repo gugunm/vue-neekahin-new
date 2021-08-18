@@ -20,12 +20,20 @@
   color: #4D4D4D;
 }
 
+.bg-peach {
+  background-color: #FFF7F0;
+}
+
+.bg-dark-peach {
+  background-color: #F4E6D0;
+}
+
 .bg-dark-gold {
   background-color: #8a5d1a;
 }
 
 .bg-neekah-1 {
-  background-color: #f8f7f4;
+  background-color: #F8F7F4;
 }
 
 .bg-neekah-2 {
@@ -44,10 +52,23 @@
   border-color:#b58200;
 }
 
+.admin-contact {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #b58200;
+}
+
+.admin-contact:hover {
+  color: #8a5d1a;
+}
+
 @layer utilities {
   @variants hover {
     .text-gold {
       color: #b58200;
+    }
+    .text-dark-gold {
+      color: #8a5d1a;
     }
     .border-gold {
       border-color:#b58200;
@@ -60,6 +81,12 @@
     }
     .bg-dark-gold {
       background-color: #8a5d1a;
+    }
+    .garis-gold {
+      box-shadow: 0em -0.5em 0 #b58200 inset;
+    }
+    .garis-peach {
+      box-shadow: 0em -0.5em 0 #F4E6D0 inset;
     }
   }
 }

@@ -6,11 +6,13 @@ import store from './store'
 
 import './css/main.css'
 
+import VueScrollTo from 'vue-scrollto';
+
 /* Fetch sample data */
 store.dispatch('fetchClients')
 
 /* Default title tag */
-const defaultDocumentTitle = 'Admin One Vue 3 Tailwind'
+const defaultDocumentTitle = 'Neekah Invitation'
 
 /* Collapse mobile aside menu on route change & set document title from route meta */
 router.beforeEach(to => {
@@ -28,4 +30,4 @@ router.afterEach(to => {
   }
 })
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(store).use(router).use(VueScrollTo).mount('#app')

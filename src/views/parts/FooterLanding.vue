@@ -1,7 +1,6 @@
 <template>
-  <footer class="w-full bottom-0 bg-color-footer py-6 mt-5">
+  <footer class="w-full bottom-0 bg-color-footer py-6">
     <div class="mx-auto">
-      <!-- <hr class="mb-6 border-b-1 border-gray-700" /> -->
       <div class="w-full px-4 flex flex-col items-center">
         <div class="">
           <img
@@ -11,12 +10,18 @@
           >
         </div>
         <div class="my-5 sm:my-6 flex items-center justify-center">
-          <img
-            class="w-6 mx-3 sm:mx-4"
-            :src="IconIg"
-            alt=""
+          <a
+            href="http://instagram.com/neekahinvitation/"
+            target="_blank"
+            class="cursor-pointer"
           >
-          <img
+            <img
+              class="w-6 mx-3 sm:mx-4"
+              :src="IconIg"
+              alt=""
+            >
+          </a>
+          <!-- <img
             class="w-6 mx-3 sm:mx-4"
             :src="IconFb"
             alt=""
@@ -25,7 +30,7 @@
             class="w-6 mx-3 sm:mx-4"
             :src="IconYt"
             alt=""
-          >
+          > -->
         </div>
         <p class="text-xs sm:text-sm font-semibold py-1">
           Copyright © {{date}} Neekah.in. All Right Reserved
