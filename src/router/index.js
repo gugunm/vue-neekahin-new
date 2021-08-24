@@ -80,7 +80,7 @@ const routes = [
       formScreen: true
     },
     path: '/order-success',
-    name: 'order-seccess',
+    name: 'order-success',
     component: () => import(/* webpackChunkName: "login" */ '../views/OrderSuccess')
   },
   {

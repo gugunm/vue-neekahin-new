@@ -52,53 +52,97 @@
           <div class=" capitalize">
             <form
               class="grid grid-cols-2"
-              action=""
               method="post"
+              @submit.prevent="sendEmail"
             >
               <div class="pb-4 block px-4 col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-1">
                 <label class="block text-left mb-2">nama mempelai pria</label>
                 <input
-                  name="nama-pria"
+                  v-model="user.nama_lelaki"
                   type="text"
+                  name="nama_lelaki"
+                  required
                   class="px-5 block w-full border-color-2"
                   placeholder="Ex. Agus"
+                  @change="isTextEmpty"
                 >
+                <p
+                  v-if="!!isPriaEmpty()"
+                  class="text-left text-xs mt-2 color-neekah-5 text-red-500"
+                >
+                  wajib diisi ya kak.
+                </p>
               </div>
 
               <div class="pb-4 block px-4 col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-1">
                 <label class="block text-left mb-2">nama mempelai wanita</label>
                 <input
-                  name="nama-wanita"
+                  v-model="user.nama_perempuan"
                   type="text"
+                  name="nama_perempuan"
+                  required
                   class="px-5 block w-full border-color-2"
                   placeholder="Ex. Ayu"
+                  @change="isTextEmpty"
                 >
+                <p
+                  v-if="!!isPerempuanEmpty()"
+                  class="text-left text-xs mt-2 color-neekah-5 text-red-500"
+                >
+                  wajib diisi ya kak.
+                </p>
               </div>
               <div class="pb-4 block px-4 col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-1">
                 <label class="block text-left mb-2">email</label>
                 <input
-                  name="email"
+                  v-model="user.email"
                   type="text"
+                  name="user_email"
+                  required
                   class="px-5 block w-full border-color-2"
                   placeholder="agus@email.com"
                 >
+                <p
+                  v-if="!isEmailValid() && user.email != ''"
+                  class="text-left text-xs mt-2 color-neekah-5 text-red-500"
+                >
+                  alamat email anda belum valid, silahkan perbaiki
+                </p>
               </div>
               <div class="pb-4 block px-4 col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-1">
                 <label class="block text-left mb-2">no. whatsapp</label>
                 <input
+                  v-model="user.phone"
                   type="text"
+                  name="user_wa"
+                  required
                   class="px-5 block w-full border-color-2"
                   placeholder="08xxxxxxxxxx"
                 >
+                <p
+                  v-if="!isPhoneValid() && user.phone != ''"
+                  class="text-left text-xs mt-2 color-neekah-5 text-red-500"
+                >
+                  nomor handphone anda tidak valid, jika no. 10 digit, gunakan angka 62 didepan
+                </p>
               </div>
               <div class="pb-24 px-4 col-span-2">
                 <label class="block text-left mb-2">request</label>
                 <textarea
-                  name="request"
-                  id=""
+                  v-model="user.deskripsi"
+                  style="resize: none;"
+                  name="user_request"
+                  required
                   class="px-5 w-full h-48 border-color-2"
                   placeholder="*Saya inging yang simple dan modern"
+                  @change="isRequestEmpty"
                 ></textarea>
+                <p
+                  v-if="!!isRequestEmpty()"
+                  class="text-left text-xs mt-2 color-neekah-5 text-red-500"
+                >
+                  wajib diisi ya kak.
+                </p>
               </div>
               <div class="px-4 col-span-2 xl:col-span-1 lg:col-span-1 md:col-span-1">
                 <button
@@ -107,6 +151,11 @@
                 >pesan undangan</button>
               </div>
             </form>
+            <button
+              type="submit"
+              class="button-color rounded text-xs md:text-sm w-full xl:w-8/12 px-8 py-3 capitalize"
+              @click="$router.push({ path: 'order-success' })"
+            >pesan undangan</button>
           </div>
         </section>
       </div>
@@ -120,57 +169,71 @@ import FooterLanding from './parts/FooterLanding.vue';
 import NavLanding from './parts/NavLanding.vue';
 import silverPng from '@/assets/img/vector-silver.png';
 
-const paket = {
-  silver: {
-    hargaNormal: '250.000',
-    hargaDisc: '',
-    items: [
-      'SIMPLE DESIGN',
-      'MAX 5 FOTO/GALERI',
-      'MAPS',
-      'COUNTDOWN',
-      'MUSIC',
-      'LINK / URL DOMAIN',
-    ],
-  },
-  gold: {
-    hargaNormal: '350.000',
-    hargaDisc: '300.000',
-    items: [
-      'SILVER FEATURES INCLUDED',
-      'ELEGANCE DESIGN',
-      'MAX 8 FOTO/GALERI',
-      'COUNTDOWN',
-      'VIDEO',
-      'UCAPAN DARI TAMU',
-    ],
-  },
-  platinum: {
-    hargaNormal: '500.000',
-    hargaDisc: '450.000',
-    items: [
-      'GOLD FEATURES INCLUDED',
-      'PREMIUM DESIGN',
-      'MAX 12 FOTO/GALERI',
-      'WEDDING GIFT',
-      'REVISI MINOR & MAJOR',
-      '2 LOKASI ACARA',
-    ],
-  },
-};
+import emailjs from 'emailjs-com';
 
 export default {
   components: { NavLanding, FooterLanding },
   data() {
     return {
+      user: {
+        nama_lelaki: null,
+        nama_perempuan: null,
+        email: '',
+        phone: '',
+        deskripsi: null,
+      },
+      email_reg:
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+      phone_reg: /^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$/,
       silverPng,
       selectedPaket: this.$route.query.paket,
-      paket,
     };
   },
   computed: {
     selectedItem() {
-      return this.paket[this.selectedPaket];
+      return this.$store.state.paket[this.selectedPaket];
+      // return this.paket[this.selectedPaket];
+    },
+  },
+  methods: {
+    sendEmail: (e) => {
+      emailjs
+        .sendForm(
+          'service_yvae9e9',
+          'template_dhoc5bw',
+          e.target,
+          'user_sUCQRI39fkqeYaHkw3Ptw'
+        )
+        .then(
+          // this.$router.push({ path: 'order-success' })
+          (result) => {
+            console.log('SUCCESS!', result.status, result.text);
+            window.location.href = '/order-success';
+          },
+          (error) => {
+            console.log('FAILED...', error);
+          }
+        );
+    },
+
+    isPerempuanEmpty: function () {
+      return this.user.nama_perempuan === '';
+    },
+
+    isPriaEmpty: function () {
+      return this.user.nama_lelaki === '';
+    },
+
+    isRequestEmpty: function () {
+      return this.user.deskripsi === '';
+    },
+
+    isEmailValid: function () {
+      return this.user.email === '' || this.email_reg.test(this.user.email);
+    },
+
+    isPhoneValid: function () {
+      return this.user.phone === '' || this.phone_reg.test(this.user.phone);
     },
   },
 };

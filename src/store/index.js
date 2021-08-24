@@ -16,7 +16,47 @@ export default createStore({
     isAsideLgActive: false,
 
     /* Sample data (commonly used) */
-    clients: []
+    clients: [],
+
+    /* State Paket Price */
+    paket: {
+      silver: {
+        hargaNormal: '250.000',
+        hargaDisc: '',
+        items: [
+          'SIMPLE DESIGN',
+          'MAX 5 FOTO/GALERI',
+          'MAPS',
+          'COUNTDOWN',
+          'MUSIC',
+          'LINK / URL DOMAIN',
+        ],
+      },
+      gold: {
+        hargaNormal: '350.000',
+        hargaDisc: '300.000',
+        items: [
+          'SILVER FEATURES INCLUDED',
+          'ELEGANCE DESIGN',
+          'MAX 8 FOTO/GALERI',
+          'COUNTDOWN',
+          'VIDEO',
+          'UCAPAN DARI TAMU',
+        ],
+      },
+      platinum: {
+        hargaNormal: '500.000',
+        hargaDisc: '450.000',
+        items: [
+          'GOLD FEATURES INCLUDED',
+          'PREMIUM DESIGN',
+          'MAX 12 FOTO/GALERI',
+          'WEDDING GIFT',
+          'REVISI MINOR & MAJOR',
+          '2 LOKASI ACARA',
+        ],
+      },
+    }
   },
   mutations: {
     /* A fit-them-all commit */
