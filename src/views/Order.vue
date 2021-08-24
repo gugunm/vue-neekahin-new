@@ -151,11 +151,6 @@
                 >pesan undangan</button>
               </div>
             </form>
-            <button
-              type="submit"
-              class="button-color rounded text-xs md:text-sm w-full xl:w-8/12 px-8 py-3 capitalize"
-              @click="$router.push({ path: 'order-success' })"
-            >pesan undangan</button>
           </div>
         </section>
       </div>
