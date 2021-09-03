@@ -91,6 +91,15 @@ const routes = [
     path: '/slick',
     name: 'slick',
     component: () => import(/* webpackChunkName: "login" */ '../views/Carousel.vue')
+  },
+  {
+    meta: {
+      title: 'TemplateSlider',
+      formScreen: true
+    },
+    path: '/template-slider',
+    name: 'top-slider',
+    component: () => import(/* webpackChunkName: "login" */ '../views/TemplateSlider.vue')
   }
 ]
 
