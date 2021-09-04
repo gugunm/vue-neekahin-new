@@ -2,9 +2,9 @@
   <div>
     <h3>hello world</h3>
     <Counter
-      :tahun="2022"
-      :bulan="1"
-      :hari="22"
+      :tahun="2021"
+      :bulan="9"
+      :hari="5"
     />
   </div>
 </template>

@@ -61,7 +61,7 @@ export default {
         this.displaydays = this.formatNum(days);
 
 
-      }, 0);
+      }, 1000);
     }
 
   }
