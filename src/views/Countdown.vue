@@ -4,7 +4,9 @@
     <Counter
       :tahun="2021"
       :bulan="9"
-      :hari="5"
+      :hari="4"
+      :jam="15"
+      :menit="55"
     />
   </div>
 </template>
