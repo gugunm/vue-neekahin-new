@@ -91,6 +91,15 @@ const routes = [
     path: '/slick',
     name: 'slick',
     component: () => import(/* webpackChunkName: "login" */ '../views/Carousel.vue')
+  },
+  {
+    meta: {
+      title: 'countdown',
+      formScreen: true
+    },
+    path: '/countdown',
+    name: 'countdown',
+    component: () => import(/* webpackChunkName: "login" */ '../views/Countdown.vue')
   }
 ]
 
