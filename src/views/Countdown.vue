@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Counter from "@/components/Counter.vue";
+import Counter from '@/views/components/Counter.vue';
 export default {
-  components:{
-    Counter
-  }
-}
+  components: {
+    Counter,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
