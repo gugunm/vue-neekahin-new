@@ -94,6 +94,15 @@ const routes = [
   },
   {
     meta: {
+      title: 'TemplateSlider',
+      formScreen: true
+    },
+    path: '/template-slider',
+    name: 'top-slider',
+    component: () => import(/* webpackChunkName: "login" */ '../views/TemplateSlider.vue')
+  },
+  {
+    meta: {
       title: 'countdown',
       formScreen: true
     },
@@ -101,6 +110,7 @@ const routes = [
     name: 'countdown',
     component: () => import(/* webpackChunkName: "login" */ '../views/Countdown.vue')
   }
+
 ]
 
 const router = createRouter({
