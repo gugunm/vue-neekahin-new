@@ -6,12 +6,29 @@
     <div class="bg-red-400 py-16">
       <h1 class="text-center text-white">PERNIKAHAN WAHYU & ANGGI</h1>
     </div>
+    <div class="py-14">
+      <Counter
+        :tahun="2021"
+        :bulan="9"
+        :hari="20"
+        :jam="9"
+        :menit="0"
+      />
+    </div>
     <button
-      class="btn-play bg-yellow-500 fixed right-0 top-1/2 mr-9"
+      class="btn-play fixed right-0 top-1/2 mr-9"
       @click="togglePlay"
     >
-      <p v-if="isPlay">||</p>
-      <p v-else>></p>
+      <img
+        v-if="isPlay"
+        class="icon-pause"
+        :src="IPause"
+      >
+      <img
+        v-else
+        class="icon-play"
+        :src="IPlay"
+      >
     </button>
   </div>
   <transition name="slide-fade">
@@ -55,13 +72,22 @@
 <script>
 import CoverTemplate1 from '../assets/img/template/bg-template-1.jpg';
 import Amplop from '../assets/img/template/envelope.svg';
+import IPlay from '../assets/img/template/icon-play.svg';
+import IPause from '../assets/img/template/icon-pause.svg';
+
+import Counter from '@/views/components/Counter.vue';
 
 export default {
+  components: {
+    Counter,
+  },
   data() {
     return {
       show: false,
       CoverTemplate1,
       Amplop,
+      IPlay,
+      IPause,
       music: new Audio('https://bit.ly/nk-beautiful-in-white'),
       isPlay: false,
     };
@@ -74,6 +100,9 @@ export default {
         this.music.pause();
       }
     },
+  },
+  mounted() {
+    this.music.loop = true;
   },
   methods: {
     togglePlay() {
