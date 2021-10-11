@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 
+import './firebase'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -7,6 +8,7 @@ import store from './store'
 import './css/main.css'
 
 import VueScrollTo from 'vue-scrollto';
+import VueFire from 'vuefire';
 
 /* Fetch sample data */
 store.dispatch('fetchClients')
@@ -30,4 +32,4 @@ router.afterEach(to => {
   }
 })
 
-createApp(App).use(store).use(router).use(VueScrollTo).mount('#app')
+createApp(App).use(VueFire).use(store).use(router).use(VueScrollTo).mount('#app')
